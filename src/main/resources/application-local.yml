@@ -1,0 +1,61 @@
+server:
+  # 服务端口
+  port: 8888
+
+spring:
+  #  cloud:
+  #    refresh:
+  #      refreshable: none
+  # 数据源配置
+  datasource:
+    username: "root"
+    password: "888888"
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/project?serverTimezone=GMT%2B8&useSSL=false&characterEncoding=UTF8
+    hikari:
+      max-lifetime: 28800
+      connection-timeout: 20000
+      maximum-pool-size: 15
+      minimum-idle: 5
+      idle-timeout: 25000
+
+
+  redis:
+    ## Redis数据库索引（默认为0）
+    database: 0
+    ## Redis服务器地址
+    host: 127.0.0.1
+    ## Redis服务器连接端口
+    port: 6379
+    ## Redis服务器连接密码（默认为空）
+    password:
+    jedis:
+      pool:
+        ## 连接池最大连接数（使用负值表示没有限制）
+        #spring.redis.pool.max-active=8
+        max-active: 8
+        ## 连接池最大阻塞等待时间（使用负值表示没有限制）
+        #spring.redis.pool.max-wait=-1
+        max-wait: -1
+        ## 连接池中的最大空闲连接
+        #spring.redis.pool.max-idle=8
+        max-idle: 8
+        ## 连接池中的最小空闲连接
+        #spring.redis.pool.min-idle=0
+        min-idle: 0
+    ## 连接超时时间（毫秒）
+    timeout: 1200
+
+
+oss:
+  endpoint: "oss-cn-guangzhou.aliyuncs.com"
+  accessKeyId: ""
+  accessKeySecret: ""
+  bucketName: ""
+
+
+logging:
+  file:
+    path: ./logs/dev-log.log
+
+

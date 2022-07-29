@@ -1,0 +1,35 @@
+{
+  "name": "pmsweb",
+  "version": "0.1.0",
+  "private": true,
+  "author": "nott",
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build"
+  },
+  "description": "人事管理系统web端服务器",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "core-js": "^3.6.5",
+    "element-ui": "^2.15.6",
+    "font-awesome": "^4.7.0",
+    "json-bigint": "^1.0.0",
+    "vue": "^2.6.11",
+    "vue-cropper": "^0.5.8",
+    "vue-router": "^3.2.0",
+    "vuex": "^3.6.2"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-router": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "less-loader": "^6.2.0",
+    "vue-template-compiler": "^2.6.11",
+    "webpack": "^4.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}

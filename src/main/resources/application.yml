@@ -1,0 +1,62 @@
+#主配置文件
+
+spring:
+  main:
+    allow-circular-references: true
+  # 激活环境配置
+  application:
+    name: NOTT-Pms
+  profiles:
+    active: dev
+  #  active: dev
+
+  # 文件编码 UTF8
+  mandatory-file-encoding: UTF-8
+  #  mvc:
+  #    # 404 交给异常处理器处理
+  #    throw-Exception-if-no-handler-found: true
+  web:
+    resources:
+      # 关闭默认静态资源的映射规则
+      add-mappings: false
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  servlet:
+    multipart:
+      enabled: false
+      file-size-threshold: 0
+      max-file-size: 10MB
+      max-request-size: 10MB
+
+mybatis-plus:
+  type-aliases-package: com.nott.pms.**.entity
+  configuration:
+    # 开启下划线转驼峰
+    map-underscore-to-camel-case: true
+    #    # 指定默认枚举类型的类型转换器
+    #    default-enum-type-handler: com.baomidou.mybatisplus.core.handlers.MybatisEnumTypeHandler
+    global-config:
+      # 开启/关闭 banner 打印
+      banner: false
+    db-config:
+      # 逻辑删除（软删除）
+      logic-not-delete-value: 0
+      logic-delete-value: 1
+  # mapper路径位置
+  mapper-locations: classpath:mapper/*/*Mapper.xml
+  global-config:
+    db-config:
+      id-type: auto
+
+## 用于雪花算法生成id
+#application:
+#  datacenterId: 0
+#  workerId: 1
+
+http:
+  multipart:
+    maxFileSize: 10MB
+    maxRequestSize: 100MB
+
+
